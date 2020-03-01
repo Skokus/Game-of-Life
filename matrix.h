@@ -40,5 +40,25 @@ void checksasiad(int macierz[3][3], int sasiad[3][3]){
     }
 }
 
-#endif MATRIX_H_
+void zmienstan(int macierz[3][3], int sasiad[3][3]){
+    for(int r = 0; r < 3; r++){
+        for(int c = 0; c < 3; c++){
+            if(sasiad[r][c] == 3)
+                macierz[r][c] = 1;
+            else
+                macierz[r][c] = 0;
+        }
+    }
+    return macierz;
+}
 
+void zerujmacierz(int sasiad[3][3]){
+    for(int r = 0; r < 3; r++){
+            for(int c = 0; c < 3; c++)
+                sasiad[r][c] = 0;
+        }
+}
+
+
+
+#endif MATRIX_H_
