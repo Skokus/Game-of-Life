@@ -3,36 +3,21 @@
 
 #include "matrix.h"
 
-int main()
-{
+int main() {
     int sasiad [3][3] ={0};
     int macierz[3][3] = {
-    {1,1,1},
-    {0,0,0},
-    {0,0,0},
+    {1,0,1},
+    {1,0,0},
+    {1,0,0},
     };
 
-    printf("Macierz:\n");
-    for(int r = 0; r < 3; r++){
-        for(int c = 0; c < 3; c++)
-            printf("%d ", macierz[r][c]);
-        printf("\n");
-    }
+    for(int i = 1; i <= 3; i++){
+        printf("%d. iteracja\n", i);
+        wypiszmacierz(macierz);
+        checksasiad(macierz, sasiad);
+        zmienstan(macierz, sasiad);
+        zerujmacierz(sasiad);
 
-    printf("Pierwsza iteracja:\n");
-    for(int r = 0; r < 3; r++){
-        for(int c = 0; c < 3; c++)
-            printf("%d ", sasiad[r][c]);
-
-    printf("\n");
-    }
-    checksasiad(macierz, sasiad);
-    printf("Druga iteracja:\n");
-    for(int r = 0; r < 3; r++){
-        for(int c = 0; c < 3; c++)
-            printf("%d ", sasiad[r][c]);
-
-    printf("\n");
     }
     return 0;
 }
