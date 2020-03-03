@@ -18,10 +18,10 @@ Pliki w projekcie:
       
         Funkcje matrix.h:
         
-            void checksasiad(int macierz[rows][colm], int sasiad[rows][colm]) - sprawdza pokolei dla każdej komórki macierz[][] komórki sąsiednie, wynik zapisuje w macierzy sasiad[][].
+            void checksasiad(int rows, int colm, int macierz[rows][colm], int sasiad[rows][colm]) - sprawdza pokolei dla każdej komórki macierz[][] komórki sąsiednie, wynik zapisuje w macierzy sasiad[][].
             
-            void zmienstan(int macierz[rows][colm], int sasiad[rows][colm]) - zmienia wartosci macierz[][] bazujac na wartosciach sasiad[][].
+            void zmienstan(int rows, int colm, int macierz[rows][colm], int sasiad[rows][colm]) - zmienia wartosci macierz[][] bazujac na wartosciach sasiad[][].
             
-            void zerujmacierz(int sasiad[rows][colm]) - zeruje wszystkie wartosci sasiad[][] przed kolejna iteracją.
+            void zerujmacierz(int rows, int colm, int sasiad[rows][colm]) - zeruje wszystkie wartosci sasiad[][] przed kolejna iteracją.
             
-            void wypiszmacierz(int macierz[rows][colm]) - wypisuje macierz.
+            void wypiszmacierz(int rows, int colm, int macierz[rows][colm]) - wypisuje macierz.
