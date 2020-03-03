@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
 
 #include "matrix.h"
 
 int main() {
 
-    int rows = 3;
-    int colm = 3;
-    int iteration = 4;
+    int rows = 5;
+    int colm = 5;
+    int iteration = 3;
 
     int sasiad  [rows][colm];
-    zerujmacierz(sasiad);
+    zerujmacierz(rows, colm, sasiad);
     int macierz [rows][colm];
 
         for(int r = 0; r < rows; r++){
@@ -23,11 +22,12 @@ int main() {
 
     for(int i = 1; i <= iteration; i++){
         printf("%d. iteracja\n", i);
-        wypiszmacierz(macierz);
-        checksasiad(macierz, sasiad);
-        zmienstan(macierz, sasiad);
-        zerujmacierz(sasiad);
+        wypiszmacierz(rows, colm, macierz);
+        checksasiad(rows, colm, macierz, sasiad);
+        zmienstan(rows, colm, macierz, sasiad);
+        zerujmacierz(rows, colm, sasiad);
 
     }
     return 0;
 }
+
