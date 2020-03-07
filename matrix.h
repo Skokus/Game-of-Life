@@ -9,5 +9,6 @@ void zerujmacierz(int rows, int colm, int sasiad[rows][colm]);
 
 void wypiszmacierz(int rows, int colm, int macierz[rows][colm]);
 
+void zrobmacierz (int rows int colm);
 
 #endif MATRIX_H_
