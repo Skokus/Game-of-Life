@@ -51,10 +51,9 @@ void zapiszmacierz(int rows, int colm, int macierz[rows][colm], char* nazwa){
     char str[30];
     sprintf(str, "%s.txt", nazwa);
     zapis = fopen(str, "w");
-    for (i = 0; i < rows; i++) {
-        for (j = 0; j < colm; j++) {
-            tmp = macierz[i][j];
-            fprintf(zapis, "%d ", tmp);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < colm; j++) {
+            fprintf(zapis, "%d ", macierz[i][j]);
         }
         fprintf(zapis, "\n");
     }
