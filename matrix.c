@@ -77,7 +77,7 @@ void wypiszmacierz(int rows, int colm, int macierz[rows][colm]){
     }
 }
 
-void zrobmacierz (int rows, int colm){
+int** zrobmacierz (int rows, int colm){
     int** macierz;
     macierz = malloc(sizeof(int*)*rows);
     for(int i=0; i<rows; i++)
@@ -86,4 +86,5 @@ void zrobmacierz (int rows, int colm){
         for(int j=0; j<colm; j++)
             macierz[i][j]=0;
     }
+    return macierz;
 }
