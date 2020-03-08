@@ -44,3 +44,19 @@ void wczytajmacierz(int rows, int colm, int macierz[rows][colm], FILE *file){
         }
     }
 }
+
+void zapiszmacierz(int rows, int colm, int macierz[rows][colm], char* nazwa){
+    FILE* zapis;
+    int tmp;
+    char str[30];
+    sprintf(str, "%s.txt", nazwa);
+    zapis = fopen(str, "w");
+    for (i = 0; i < rows; i++) {
+        for (j = 0; j < colm; j++) {
+            tmp = macierz[i][j];
+            fprintf(zapis, "%d ", tmp);
+        }
+        fprintf(zapis, "\n");
+    }
+    fclose(zapis);
+}

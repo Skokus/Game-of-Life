@@ -7,5 +7,6 @@ void zwymiarujmacierz(int *rows, int *colm, int *colmmax, FILE *fp);
 
 void wczytajmacierz(int rows, int colm, int macierz[rows][colm], FILE *file);
 
-#endif FILE_H_
+void zapiszmacierz(int rows, int colm, int macierz[rows][colm], FILE *file, char* nazwa)
 
+#endif FILE_H_
