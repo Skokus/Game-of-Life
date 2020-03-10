@@ -33,7 +33,8 @@ int main(int argc, char** argv) {
         checksasiad(rows, colm, macierz, sasiad);
         zmienstan(rows, colm, macierz, sasiad);
     }
-    printf("%d. iteracja\n", iteration);    // pętla zapisywała iteration + 1 iterację, żeby utworzyć plik trzeba zrobić to oddzielnie.
+    printf("%d. iteracja\n", iteration); // pętla zapisywała iteration + 1 iterację, żeby utworzyć plik trzeba zrobić to oddzielnie.
+    zrobObraz(rows, colm, macierz, iteration);
     wypiszmacierz(rows, colm, macierz);
     zapiszmacierz(rows, colm, macierz, "test2");
 
