@@ -9,4 +9,4 @@ void wczytajmacierz(int rows, int colm, int macierz[rows][colm], FILE *file);
 
 void zapiszmacierz(int rows, int colm, int macierz[rows][colm], char* nazwa);
 
-#endif FILE_H_
+#endif
