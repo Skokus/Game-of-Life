@@ -12,4 +12,4 @@ void wypiszmacierz(int rows, int colm, int macierz[rows][colm]);
 
 int** zrobmacierz (int rows, int colm);
 
-#endif MATRIX_H_
+#endif
