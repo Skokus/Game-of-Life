@@ -10,16 +10,15 @@ int main(int argc, char** argv) {
     int rows = 0;
     int colm = 0;
     int colmmax = 0;
-    int iteration = 3;
-
-    FILE *fp = fopen(argv[1], "r");
+    int iteration = atoi(argv[1]);
+    FILE *fp = fopen(argv[2], "r");
     zwymiarujmacierz(&rows, &colm, &colmmax, fp);
     fclose(fp);
 
     int** sasiad  = zrobmacierz(rows, colm);
     int** macierz = zrobmacierz(rows, colm);
 
-    FILE *file = fopen(argv[1], "r");
+    FILE *file = fopen(argv[2], "r");
     wczytajmacierz(rows, colm, macierz, file);
     fclose(file);
 
@@ -33,10 +32,9 @@ int main(int argc, char** argv) {
         checksasiad(rows, colm, macierz, sasiad);
         zmienstan(rows, colm, macierz, sasiad);
     }
-    printf("%d. iteracja\n", iteration); // pętla zapisywała iteration + 1 iterację, żeby utworzyć plik trzeba zrobić to oddzielnie.
-    zrobObraz(rows, colm, macierz, iteration);
+    printf("%d. iteracja\n", iteration);    // pêtla zapisywa³a iteration + 1 iteracjê, ¿eby utworzyæ plik trzeba zrobiæ to oddzielnie.
     wypiszmacierz(rows, colm, macierz);
-    zapiszmacierz(rows, colm, macierz, "test2");
+    zapiszmacierz(rows, colm, macierz, argv[3]);
 
     return 0;
 }
