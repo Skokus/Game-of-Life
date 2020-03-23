@@ -7,6 +7,16 @@
 #include "pbm.h"
 
 int main(int argc, char** argv) {
+    if(argc != 4){
+        printf("Podano zla liczbe argumentow\n");
+        printf("Prosze podac:\nArgument 1 - liczbe iteracji\nArgument 2 - plik wejsciowy\nArgument 3 - plik wyjsciowy\n");
+        return 1;
+    }
+    else if (atoi(argv[1]) == 0){
+        printf("Jako liczbe iteracji nie podano liczby badz podano 0.\nProsze o wpisanie liczby dodatniej.");
+        return 2;
+    }
+
     int rows = 0;
     int colm = 0;
     int colmmax = 0;
@@ -22,8 +32,8 @@ int main(int argc, char** argv) {
     wczytajmacierz(rows, colm, macierz, file);
     fclose(file);
 
-
-    printf("Rows = %d, Colm = %d\n\n", rows, colm);
+    printf("Wczytywany plik ma nazwe: %s\n", argv[2]);
+    printf("Liczba wierszy wynosi %d.\nLiczba kolumn wychodzi %d.\n\n", rows, colm);
     for(int i = 1; i < iteration; i++){
         printf("%d. iteracja\n", i);
         zerujmacierz(rows, colm, sasiad);
@@ -35,8 +45,12 @@ int main(int argc, char** argv) {
     printf("%d. iteracja\n", iteration);    // pêtla zapisywa³a iteration + 1 iteracjê, ¿eby utworzyæ plik trzeba zrobiæ to oddzielnie.
     wypiszmacierz(rows, colm, macierz);
     zapiszmacierz(rows, colm, macierz, argv[3]);
-    free(*macierz);
+    zrobObraz(rows, colm, macierz, iteration);
+
+    printf("\nUtworzono %d plikow o nazwie NR_ITERACJI.pbm\n", iteration);
+    printf("\nOstatnia macierz zapisano do pliku o nazwie: %s\n", argv[3]);
     free(*sasiad);
+    free(*macierz);
 
     return 0;
 }
