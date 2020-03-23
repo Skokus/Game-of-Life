@@ -35,6 +35,8 @@ int main(int argc, char** argv) {
     printf("%d. iteracja\n", iteration);    // pêtla zapisywa³a iteration + 1 iteracjê, ¿eby utworzyæ plik trzeba zrobiæ to oddzielnie.
     wypiszmacierz(rows, colm, macierz);
     zapiszmacierz(rows, colm, macierz, argv[3]);
+    free(macierz);
+    free(sasiad);
 
     return 0;
 }
